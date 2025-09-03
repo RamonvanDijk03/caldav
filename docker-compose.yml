@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  caldav-bridge:
+    build: .
+    container_name: caldav-bridge
+    env_file: .env
+    ports:
+      - "8089:8089"        # reachable on your Pi's LAN IP, not via Cloudflare
+    restart: unless-stopped
